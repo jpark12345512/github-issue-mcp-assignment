@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-issue-mcp"
+version = "1.0.0"
+description = "A secure local MCP server for listing and creating GitHub issues."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "JiwonPark" }]
+dependencies = [
+  "httpx>=0.28.0,<1.0.0",
+  "mcp[cli]>=2.0.0,<3.0.0",
+  "python-dotenv>=1.1.0,<2.0.0",
+]
+
+[project.scripts]
+github-issue-mcp = "github_issue_mcp.server:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.0,<10.0.0",
+  "ruff>=0.11.0,<1.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/github_issue_mcp"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+

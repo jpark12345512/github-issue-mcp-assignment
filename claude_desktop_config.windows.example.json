@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "github-issue-mcp": {
+      "command": "C:\\ABSOLUTE\\PATH\\TO\\uv.exe",
+      "args": [
+        "--directory",
+        "C:\\ABSOLUTE\\PATH\\TO\\github-issue-mcp",
+        "run",
+        "--frozen",
+        "github-issue-mcp"
+      ]
+    }
+  }
+}
+
